@@ -30,6 +30,10 @@ struct Circle
 
     // Returns a circle centered at the origin with the given radius.
     static Circle at_origin(double radius);
+
+    void scale_by(double factor);
+
+    bool operator==(Circle other) const;
 };
 
 // Stream insertion for `Posn`.

@@ -1,7 +1,18 @@
 #include "constructors.hxx"
-
+# define M_PI           3.14159265358979323846  /* pi */
 #include <cmath>
 #include <stdexcept>
+
+
+
+Posn::Posn(double x, double y)
+        : x(x)
+        , y(y)
+{
+    if (!std::isnan(x)&&!std::isnan(y)) return;
+
+    throw std::invalid_argument("Circle requires a positive radius.");
+}
 
 Posn::Posn()
         : Posn(0, 0)

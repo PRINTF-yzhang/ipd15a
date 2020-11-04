@@ -6,5 +6,8 @@
 
 TEST_CASE("operator<<(std::ostream&, Circle) works")
 {
-    // TODO: Add a check here using std::ostringstream
+    std::ostringstream oss;
+    Circle my_circle{10, {3, 4}};
+    oss << my_circle;
+    CHECK(oss.str() == "my_circle is Circle {radius: 10, center: (3, 4)}");
 }
